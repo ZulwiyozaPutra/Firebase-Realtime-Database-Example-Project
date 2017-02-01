@@ -12,9 +12,10 @@
 		6E0EE1051E41AF0F007F84AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E0EE1041E41AF0F007F84AB /* Assets.xcassets */; };
 		6E0EE1081E41AF0F007F84AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E0EE1061E41AF0F007F84AB /* LaunchScreen.storyboard */; };
 		6EA37CA81E41B88B00851B8E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6EA37CA71E41B88B00851B8E /* GoogleService-Info.plist */; };
-		6EA37CAC1E41BA2F00851B8E /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA37CAB1E41BA2F00851B8E /* TableViewController.swift */; };
-		6EA37CAE1E41BD3300851B8E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA37CAD1E41BD3300851B8E /* TableViewCell.swift */; };
+		6EA37CAC1E41BA2F00851B8E /* ListPostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA37CAB1E41BA2F00851B8E /* ListPostsTableViewController.swift */; };
+		6EA37CAE1E41BD3300851B8E /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA37CAD1E41BD3300851B8E /* PostTableViewCell.swift */; };
 		6EA37CB01E41BDDD00851B8E /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA37CAF1E41BDDD00851B8E /* Post.swift */; };
+		6EA37CB21E41D57700851B8E /* NewPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA37CB11E41D57700851B8E /* NewPostTableViewController.swift */; };
 		7EFEB8F49BCDFE31329D1D89 /* Pods_Firebase_Realtime_Database_Example_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F0ED8704CB5A48F0F46D551 /* Pods_Firebase_Realtime_Database_Example_Project.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,9 +28,10 @@
 		6E0EE1071E41AF0F007F84AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E0EE1091E41AF0F007F84AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EA37CA71E41B88B00851B8E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		6EA37CAB1E41BA2F00851B8E /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		6EA37CAD1E41BD3300851B8E /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		6EA37CAB1E41BA2F00851B8E /* ListPostsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListPostsTableViewController.swift; sourceTree = "<group>"; };
+		6EA37CAD1E41BD3300851B8E /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		6EA37CAF1E41BDDD00851B8E /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		6EA37CB11E41D57700851B8E /* NewPostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPostTableViewController.swift; sourceTree = "<group>"; };
 		A8B4D2ABB6824539BB1BED88 /* Pods-Firebase Realtime Database Example Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Firebase Realtime Database Example Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Firebase Realtime Database Example Project/Pods-Firebase Realtime Database Example Project.release.xcconfig"; sourceTree = "<group>"; };
 		B7177E995D7716ACCC59194A /* Pods-Firebase Realtime Database Example Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Firebase Realtime Database Example Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Firebase Realtime Database Example Project/Pods-Firebase Realtime Database Example Project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,8 +71,9 @@
 			children = (
 				6E0EE0FD1E41AF0F007F84AB /* AppDelegate.swift */,
 				6E0EE1011E41AF0F007F84AB /* Main.storyboard */,
-				6EA37CAD1E41BD3300851B8E /* TableViewCell.swift */,
-				6EA37CAB1E41BA2F00851B8E /* TableViewController.swift */,
+				6EA37CAD1E41BD3300851B8E /* PostTableViewCell.swift */,
+				6EA37CAB1E41BA2F00851B8E /* ListPostsTableViewController.swift */,
+				6EA37CB11E41D57700851B8E /* NewPostTableViewController.swift */,
 				6EA37CAF1E41BDDD00851B8E /* Post.swift */,
 				6E0EE1041E41AF0F007F84AB /* Assets.xcassets */,
 				6E0EE1061E41AF0F007F84AB /* LaunchScreen.storyboard */,
@@ -222,9 +225,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EA37CAE1E41BD3300851B8E /* TableViewCell.swift in Sources */,
+				6EA37CB21E41D57700851B8E /* NewPostTableViewController.swift in Sources */,
+				6EA37CAE1E41BD3300851B8E /* PostTableViewCell.swift in Sources */,
 				6E0EE0FE1E41AF0F007F84AB /* AppDelegate.swift in Sources */,
-				6EA37CAC1E41BA2F00851B8E /* TableViewController.swift in Sources */,
+				6EA37CAC1E41BA2F00851B8E /* ListPostsTableViewController.swift in Sources */,
 				6EA37CB01E41BDDD00851B8E /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

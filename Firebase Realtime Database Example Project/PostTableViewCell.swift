@@ -1,5 +1,5 @@
 //
-//  TableViewCell.swift
+//  PostTableViewCell.swift
 //  Firebase Realtime Database Example Project
 //
 //  Created by Zulwiyoza Putra on 2/1/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
+class PostTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     

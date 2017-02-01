@@ -1,5 +1,5 @@
 //
-//  TableViewController.swift
+//  ListPostsTableViewController.swift
 //  Firebase Realtime Database Example Project
 //
 //  Created by Zulwiyoza Putra on 2/1/17.
@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-class TableViewController: UITableViewController {
+class ListPostsTableViewController: UITableViewController {
     
     
     var posts = [Post]()
@@ -26,9 +26,17 @@ class TableViewController: UITableViewController {
         databaseReference.child("post").childByAutoId().setValue(post)
         
     }
+    
+    @IBAction func newPost(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let newPostTableViewNavigationController = storyboard.instantiateViewController(withIdentifier: "NewPostTableViewNavigationController") as! UINavigationController
+        newPostTableViewNavigationController.popToRootViewController(animated: true)
+        self.present(newPostTableViewNavigationController, animated: true, completion: nil)
+        
+    }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    private func setupTableViewData() -> Void {
         
         let databaseReference = FIRDatabase.database().reference()
         
@@ -43,16 +51,19 @@ class TableViewController: UITableViewController {
             self.posts.insert(Post(title: title, message: message), at: 0)
             self.tableView.reloadData()
         })
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupTableViewData()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
@@ -65,7 +76,7 @@ class TableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PostTableViewCell
 
         cell.titleLabel.text = posts[indexPath.row].title
         cell.messageLabel.text = posts[indexPath.row].message
