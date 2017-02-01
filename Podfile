@@ -7,6 +7,7 @@ target 'Firebase Realtime Database Example Project' do
 
   # Pods for Firebase Realtime Database Example Project
   pod ‘Firebase’
+  pod ‘Firebase/Core’
   pod ‘Firebase/Database’
 
 end
