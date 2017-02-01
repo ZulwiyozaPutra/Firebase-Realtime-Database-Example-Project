@@ -13,7 +13,7 @@ import FirebaseDatabase
 class TableViewController: UITableViewController {
     
     
-    let posts = [Post]()
+    var posts = [Post]()
     
     func post() -> Void {
         let title = "Title"
@@ -32,9 +32,17 @@ class TableViewController: UITableViewController {
         
         let databaseReference = FIRDatabase.database().reference()
         
-        databaseReference.child("post").queryOrderedByKey().observe(.childAdded) { (<#FIRDataSnapshot#>) in
-            <#code#>
-        }
+        databaseReference.child("post").queryOrderedByKey().observe(.childAdded, with: { (databaseSnapshot) in
+            guard let snapshotValue = databaseSnapshot.value as? NSDictionary else {
+                print("There was no value returned in value of databse snapshot")
+                return
+            }
+            let title = snapshotValue["title"] as! String
+            let message = snapshotValue["message"] as! String
+            
+            self.posts.insert(Post(title: title, message: message), at: 0)
+            self.tableView.reloadData()
+        })
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -55,15 +63,16 @@ class TableViewController: UITableViewController {
         
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
 
-        // Configure the cell...
+        cell.titleLabel.text = posts[indexPath.row].title
+        cell.messageLabel.text = posts[indexPath.row].message
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

@@ -12,6 +12,8 @@ class TableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     
+    @IBOutlet weak var messageLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

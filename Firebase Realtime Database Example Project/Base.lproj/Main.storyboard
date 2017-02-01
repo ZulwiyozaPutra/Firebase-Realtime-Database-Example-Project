@@ -13,31 +13,43 @@
         <scene sceneID="0CL-ai-eJf">
             <objects>
                 <tableViewController id="2vl-Q3-kTa" customClass="TableViewController" customModule="Firebase_Realtime_Database_Example_Project" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="0eY-tP-TOR">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="0eY-tP-TOR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="J02-KE-rO7" customClass="TableViewCell" customModule="Firebase_Realtime_Database_Example_Project" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="80" id="J02-KE-rO7" customClass="TableViewCell" customModule="Firebase_Realtime_Database_Example_Project" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J02-KE-rO7" id="Yhf-HQ-iVD">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EpN-Ex-bdH">
-                                            <rect key="frame" x="16" y="11" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Bbm-LC-pRR">
+                                            <rect key="frame" x="16" y="18" width="42" height="44"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EpN-Ex-bdH">
+                                                    <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C4F-KB-dP5">
+                                                    <rect key="frame" x="0.0" y="23.5" width="42" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="EpN-Ex-bdH" firstAttribute="centerY" secondItem="Yhf-HQ-iVD" secondAttribute="centerY" id="0MH-fu-p51"/>
-                                        <constraint firstItem="EpN-Ex-bdH" firstAttribute="leading" secondItem="Yhf-HQ-iVD" secondAttribute="leading" constant="16" id="Ab9-lY-TW4"/>
+                                        <constraint firstItem="Bbm-LC-pRR" firstAttribute="leading" secondItem="Yhf-HQ-iVD" secondAttribute="leading" constant="16" id="izy-pT-ZJM"/>
+                                        <constraint firstItem="Bbm-LC-pRR" firstAttribute="centerY" secondItem="Yhf-HQ-iVD" secondAttribute="centerY" id="mFo-S6-mBN"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="messageLabel" destination="C4F-KB-dP5" id="m0o-ID-l4h"/>
                                     <outlet property="titleLabel" destination="EpN-Ex-bdH" id="8jS-mM-7Zs"/>
                                 </connections>
                             </tableViewCell>
