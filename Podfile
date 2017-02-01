@@ -6,5 +6,7 @@ target 'Firebase Realtime Database Example Project' do
   use_frameworks!
 
   # Pods for Firebase Realtime Database Example Project
+  pod ‘Firebase’
+  pod ‘Firebase/Database’
 
 end
